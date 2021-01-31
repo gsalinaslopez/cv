@@ -1,0 +1,118 @@
+\documentclass[a4paper, 11pt]{article}
+% \documentclass{article}
+
+% \usepackage{fancyhdr}
+% \usepackage[texcoord,grid,gridBG,gridunit=pt,gridcolor=red!20,subgridcolor=green!20]{eso-pic}
+% \usepackage[showframe=true]{geometry}
+% \usepackage[showframe=true, margin=0in]{geometry}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{fontspec}
+\usepackage[cm, empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xeCJK}
+
+% ------------------------------------------------------------------------------
+% Fancyheader Settings
+% ------------------------------------------------------------------------------
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+
+% ------------------------------------------------------------------------------
+% Font Settings
+% ------------------------------------------------------------------------------
+% \usepackage[scaled=.96,osf]{XCharter}%
+% \usepackage{XCharter}%
+% \setmainfont{XCharter}
+% \setmainfont{Source Serif Pro}
+\setmainfont{Source Sans Pro}
+
+\setCJKmainfont{Source Han Serif}
+
+% \newfontfamily{\nameheading}{Source Sans Pro}
+\newfontfamily{\nameheading}{Source Serif Pro}
+
+\newfontfamily{\sectionheading}{XCharter}
+% \newfontfamily{\sectionheading}{Source Sans Pro}
+
+% ------------------------------------------------------------------------------
+% Margins Settings
+% ------------------------------------------------------------------------------
+% \iffalse
+\iftrue
+% \addtolength{\oddsidemargin}{0.3in}
+% \addtolength{\marginparsep}{0.3in}
+% \addtolength{\evensidemargin}{0.3in}
+% \addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{-0.25in}
+% \addtolength{\topmargin}{-0.635cm}
+\addtolength{\textheight}{0.5in}
+% \addtolength{\voffset}{0.5in}
+    % \setlength{\textheight}{1.1\textheight}
+% \geometry{
+%     top=0.25in,
+%     bottom=0.25in,
+%     left=1pt
+% }
+\fi
+
+% ------------------------------------------------------------------------------
+% Hyperlinks Settings
+% ------------------------------------------------------------------------------
+\urlstyle{same}
+
+
+% \raggedright
+% \setlength{\tabcolsep}{0in}
+
+% ------------------------------------------------------------------------------
+% Title and Sections Settings
+% ------------------------------------------------------------------------------
+\titleformat{\section}{
+    \vspace{-6pt}
+    \normalfont\Large\bfseries\raggedright
+}{}{0pt}{}[
+    % \vspace{-12pt}
+    % \rule{\textwidth}{1pt}]
+    {\titlerule[.8pt]}]
+    % {\titlerule}]
+\titleformat{\subsection}{
+    \normalfont\normalsize\bfseries%\raggedright
+}{}{0pt}{}
+
+% ------------------------------------------------------------------------------
+% Custom commands
+% ------------------------------------------------------------------------------
+\protected\def\verythinspace{%
+  \ifmmode
+    \mskip0.5\thinmuskip
+  \else
+    \ifhmode
+      \kern0.08334em
+    \fi
+  \fi
+}
+
+
+% \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% ------------------------------------------------------------------------------
+% Document
+% ------------------------------------------------------------------------------
+\begin{document}
+
+\input{./sections/1_title.tex}
+
+\input{./sections/2_education_grades.tex}
+
+\input{./sections/3_experience.tex}
+
+\input{./sections/3_1_coding_projects.tex}
+
+\input{./sections/4_research_awards_2pp.tex}
+
+\input{./sections/5_skills.tex}
+\end{document}
