@@ -2,6 +2,19 @@ Personal CV using LaTeX. English and Hybrid (Chinglish) versions.
 
 Feel free to use the template as you wish :)
 
+### Build
+```
+$ docker run -it -v $(pwd):/workdir --rm registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-08-13-full bash
+root@container-id# cd /
+root@container-id# mkdir fonts
+root@container-id# cd /fonts
+root@container-id# wget https://github.com/adobe-fonts/source-han-serif/raw/release/Variable/TTF/SourceHanSerifTC-VF.ttf
+root@container-id# cp SourceHanSerifTC-VF.ttf /usr/local/share/fonts/
+root@container-id# fc-cache
+root@container-id# cd /workdir/
+root@container-id# xelatex ...
+```
+
 ### Preview
 
 | English | Hybrid (Chinglish) |
