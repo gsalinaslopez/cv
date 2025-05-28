@@ -5,11 +5,13 @@ Feel free to use the template as you wish :)
 ### Build
 ```
 $ docker run -it -v $(pwd):/workdir --rm registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-08-13-full bash
+root@container-id# apt update && apt install -y wget
 root@container-id# cd /
 root@container-id# mkdir fonts
 root@container-id# cd /fonts
-root@container-id# wget https://github.com/adobe-fonts/source-han-serif/raw/release/Variable/TTF/SourceHanSerifTC-VF.ttf
-root@container-id# cp SourceHanSerifTC-VF.ttf /usr/local/share/fonts/
+root@container-id# wget https://github.com/adobe-fonts/source-han-serif/releases/download/2.003R/01_SourceHanSerif.ttc.zip
+root@container-id# unzip 01_SourceHanSerif.ttc.zip
+root@container-id# cp SourceHanSerif.ttc /usr/local/share/fonts/
 root@container-id# fc-cache
 root@container-id# cd /workdir/
 root@container-id# xelatex ...
@@ -34,7 +36,7 @@ root@container-id# xelatex ...
 
 [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro#license) for content description.
 
-[Source Han Serif](https://source.typekit.com/source-han-serif/?src=GoogleFonts) for the Chinese characters.
+[Source Han Serif](https://github.com/adobe-fonts/source-han-serif) for the Chinese characters.
 
 ### Credit
 
