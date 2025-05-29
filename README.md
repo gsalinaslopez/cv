@@ -2,19 +2,13 @@ Personal CV using LaTeX. English and Hybrid (Chinglish) versions.
 
 Feel free to use the template as you wish :)
 
-### Build
+### Build and run
 ```
-$ docker run -it -v $(pwd):/workdir --rm registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-08-13-full bash
-root@container-id# apt update && apt install -y wget
-root@container-id# cd /
-root@container-id# mkdir fonts
-root@container-id# cd /fonts
-root@container-id# wget https://github.com/adobe-fonts/source-han-serif/releases/download/2.003R/01_SourceHanSerif.ttc.zip
-root@container-id# unzip 01_SourceHanSerif.ttc.zip
-root@container-id# cp SourceHanSerif.ttc /usr/local/share/fonts/
-root@container-id# fc-cache
-root@container-id# cd /workdir/
-root@container-id# xelatex ...
+$ docker build -t cv .
+$ docker run -it -v $(pwd):/workdir --rm cv bash
+
+// run xelatex inside the container
+root@container-id:/workdir# xelatex ...
 ```
 
 ### Preview
