@@ -2,12 +2,22 @@ Personal CV using LaTeX. English and Hybrid (Chinglish) versions.
 
 Feel free to use the template as you wish :)
 
-### Build and run
+### Docker image
+
+Build using the repo's `Dockerfile`:
 ```
 $ docker build -t cv .
+```
+
+Alternatively, use the pre-built packaged image:
+```
+$ docker pull ghcr.io/gsalinaslopez/cv:release
+```
+
+Run xelatex inside the container
+```
 $ docker run -it -v $(pwd):/workdir --rm cv bash
 
-// run xelatex inside the container
 root@container-id:/workdir# xelatex ...
 ```
 
