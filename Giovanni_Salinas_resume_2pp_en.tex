@@ -28,7 +28,11 @@
 % \usepackage{XCharter}%
 % \setmainfont{XCharter}
 % \setmainfont{Source Serif Pro}
-\setmainfont{Source Sans Pro}
+\setmainfont{SourceSansPro-Regular.otf}[
+    BoldFont = SourceSansPro-Bold.otf,
+    ItalicFont = SourceSansPro-RegularIt.otf,
+    BoldItalicFont = SourceSansPro-BoldIt.otf ]
+
 
 \setCJKmainfont{Source Han Serif}
 
@@ -106,9 +110,9 @@
 
 \input{./sections/1_title.tex}
 
-\input{./sections/2_education_grades.tex}
+\input{./sections/3_experience_cn_en.tex}
 
-\input{./sections/3_experience.tex}
+\input{./sections/2_education_grades.tex}
 
 \input{./sections/3_1_coding_projects.tex}
 
