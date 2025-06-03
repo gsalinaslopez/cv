@@ -21,6 +21,12 @@ $ docker run -it -v $(pwd):/workdir --rm cv bash
 root@container-id:/workdir# xelatex ...
 ```
 
+Conver pdf to png using [ImageMagick](https://imagemagick.org/)
+```
+// add [#pp] for multipage pdf: i.e. file.pdf[2] for 3rd page
+convert -flatten -density 300 file.pdf -quality 90 file.png
+```
+
 ### Preview
 
 | English | Hybrid (Chinglish) |
