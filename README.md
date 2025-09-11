@@ -14,14 +14,20 @@ Alternatively, use the pre-built packaged image:
 $ docker pull ghcr.io/gsalinaslopez/cv:release
 ```
 
-Run xelatex inside the container
+Run the container
 ```
 $ docker run -it -v $(pwd):/workdir --rm cv bash
 
-root@container-id:/workdir# xelatex ...
+# If using podman, add ':z' after the volume mapping
+$ podman run -it -v $(pwd):/workdir:z --rm cv bash
 ```
 
-Conver pdf to png using [ImageMagick](https://imagemagick.org/)
+Once attached to the container, run xelatex to generate the `.pdf` file
+```
+root@container-id:/workdir# xelatex XXX.tex
+```
+
+Convert pdf to png using [ImageMagick](https://imagemagick.org/)
 ```
 // add [#pp] for multipage pdf: i.e. file.pdf[2] for 3rd page
 convert -flatten -density 300 file.pdf -quality 90 file.png
@@ -29,9 +35,9 @@ convert -flatten -density 300 file.pdf -quality 90 file.png
 
 ### Preview
 
-| English | Hybrid (Chinglish) |
-|:---: | :---: |
-|[![CV English](./Giovanni_Salinas_resume_en.png)](https://raw.githubusercontent.com/gsalinaslopez/cv/main/Giovanni_Salinas_resume_en.pdf) | [![CV Chinglish](./Giovanni_Salinas_resume_cn_en.png)](https://raw.githubusercontent.com/gsalinaslopez/cv/main/Giovanni_Salinas_resume_cn_en.pdf) |
+| 1 Page version |
+|:---: |
+|[![CV 1PP](./Giovanni_Salinas_resume_cn_en.png)](https://raw.githubusercontent.com/gsalinaslopez/cv/main/Giovanni_Salinas_resume_cn_en.pdf) |
 
 | 2 Page version (1) | 2 Page version (2) |
 |:---: | :---: |
